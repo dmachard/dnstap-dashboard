@@ -11,9 +11,9 @@
 
 > If you want to use-it, your server must support the ``dnstap`` feature and also deploy the following [dnstap receiver](https://github.com/dmachard/dnstap-receiver)
                        
-      [             ] ----- stream 1 ------------|
-      [     DNS     ]                            |
-      [             ]                            v
+      [             ] ---- stream 1 ------------|
+      [     DNS     ]                           |
+      [             ]                           v
       [   servers   ] ---- stream 2 ----> [ dnstap receiver ] <-- [ dnstop ]
       [             ]                         
 
