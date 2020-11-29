@@ -1,8 +1,8 @@
-# ``dnstop`` - real-time metrics for dns server
+# Dnstop - real-time metrics for dns server
 
 **dnstop** can display metrics of your dns server in real-time.
 
-    If you want to use-it, you must also deploy [dnstap_receiver](https://github.com/dmachard/dnstap-receiver) project and activate ``dnstap`` feature on your dns server.
+> If you want to use-it, you must also deploy [dnstap_receiver](https://github.com/dmachard/dnstap-receiver) project and activate ``dnstap`` feature on your dns server.
 
 ## Table of contents
 * [Installation](#installation)
