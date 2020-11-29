@@ -34,7 +34,7 @@ Prefer to install dnstop on the same machine of your dnstap receiver.
 
 See [default config file](/dnstop/dnstop.conf) example.
 
-You can provide your own configuration, to do that create the file following file `/etc/dnstop/dnstop.conf`.
+You can provide your own configuration, to do that create the file following  `/etc/dnstop/dnstop.conf`.
 
 If your dnstop command is not on the same machine of your dnstap receiver, you need to configure 
 the api address and provide the good api-key, for example:
