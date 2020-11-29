@@ -10,14 +10,12 @@
 **dnstop** can display metrics of your dns server in real-time.
 
 > If you want to use-it, your server must support the ``dnstap`` feature and also deploy the following [dnstap receiver](https://github.com/dmachard/dnstap-receiver)
-
                        
-         [ dns server ] ------------|
-                                    |
-         [ dns server ] --> [ dnstap receiver ] <-- [ **dnstop** ]
-                                    |
-         [ dns server ] ------------|
-
+   [             ] ----- stream 1 ------------|
+   [     DNS     ]                            |
+   [             ]                            v
+   [   servers   ] ---- stream 2 ----> [ dnstap receiver ] <-- [ dnstop ]
+   [             ]                         
 
 ## Installation
 
