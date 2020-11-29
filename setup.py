@@ -31,7 +31,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
         "Topic :: Software Development :: Libraries",
     ],
-    entry_points={'console_scripts': ['dnstop = dnstop:start']},
+    entry_points={'console_scripts': ['dnstop = dnstop.dashboard:start']},
     install_requires=[
         "pyyaml",
         "requests"

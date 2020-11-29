@@ -25,7 +25,7 @@ Install the dnstop command with the pip command.
 pip install dnstop
 ```
 
-After installation, you can execute the `dnstop` to start-it.
+After installation, you can execute the binary `./dnstop` to start-it.
 Prefer to install dnstop on the same machine of your dnstap receiver.
 
 ![dnstop](/dnstop.png)

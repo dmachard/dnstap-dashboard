@@ -317,9 +317,10 @@ def setup_config():
     cfg = load_yaml(f)
     
     # loading config file from etc ?
-    f = pathlib.Path("/etc/dnstop/dnstop/conf")
+    ext_cfg_path = "/etc/dnstop/dnstop.conf"
+    f = pathlib.Path(ext_cfg_path)
     if f.exists():
-        cfg_ext = load_yaml(f)
+        cfg_ext = load_yaml(open(ext_cfg_path, 'r'))
         merge_cfg(u=cfg_ext,o=cfg)
         
     return cfg
