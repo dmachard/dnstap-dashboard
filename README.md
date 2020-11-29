@@ -3,7 +3,6 @@
 ## Table of contents
 * [Overview](#overview)
 * [Installation](#installation)
-    * [PyPI](#pypi)
 
 ## Overview
 
@@ -18,8 +17,6 @@
       [             ]                         
 
 ## Installation
-
-### PyPI
 
 Install the dnstop command with the pip command.
 
