@@ -325,7 +325,7 @@ def setup_config():
         
     return cfg
     
-def start():
+def start_dashboard():
     conf = setup_config()
     
     error_caught = False

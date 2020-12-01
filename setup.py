@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import sys
 import setuptools
 
 with open("./dnstap_dashboard/__init__.py", "r") as fh:
@@ -12,6 +13,13 @@ with open("README.md", "r") as fh:
     
 KEYWORDS = ('dnstap dashboard dns metrics')
 
+install_requires = [
+                     "pyyaml",
+                     "requests"
+                   ]
+if sys.platform.startswith('win32'):
+    install_requires.append("windows-curses")
+    
 setuptools.setup(
     name="dnstap_dashboard",
     version=PKG_VERSION,
@@ -31,9 +39,6 @@ setuptools.setup(
         "Operating System :: OS Independent",
         "Topic :: Software Development :: Libraries",
     ],
-    entry_points={'console_scripts': ['dnstap_dashboard = dnstap_dashboard.dashboard:start']},
-    install_requires=[
-        "pyyaml",
-        "requests"
-    ]
+    entry_points={'console_scripts': ['dnstap_dashboard = dnstap_dashboard.dashboard:start_dashboard']},
+    install_requires=install_requires
 )
