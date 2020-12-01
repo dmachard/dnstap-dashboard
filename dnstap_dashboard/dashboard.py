@@ -88,7 +88,7 @@ class Dashboard:
         """draw title"""
         # print title and header
         stream_name = stream["stream"] if stream["stream"] is not None else "all"
-        title = [ "dnstop [stream: %s]" % stream_name, 
+        title = [ "dnstap dashboard [stream: %s]" % stream_name, 
                   "refreshed every %s second(s)" % self.refresh_interval ]
         title = " / ".join(title)     
         
@@ -313,11 +313,11 @@ def merge_cfg(u, o):
    
 def setup_config():
     # set default config
-    f = pkgutil.get_data(__package__, 'dnstop.conf')
+    f = pkgutil.get_data(__package__, 'dashboard.conf')
     cfg = load_yaml(f)
     
     # loading config file from etc ?
-    ext_cfg_path = "/etc/dnstop/dnstop.conf"
+    ext_cfg_path = "/etc/dnstap_dashboard/dashboard.conf"
     f = pathlib.Path(ext_cfg_path)
     if f.exists():
         cfg_ext = load_yaml(open(ext_cfg_path, 'r'))
@@ -335,7 +335,7 @@ def start():
     setup_curses()
     
     try:
-        stdscr.addstr(0, 0, "Loading dnstop...")
+        stdscr.addstr(0, 0, "Loading dnstap dashboard...")
         datafetcher = DataFetcher(api_key=conf["dnstap-receiver"]["api-key"], 
                                   api_host=conf["dnstap-receiver"]["api-ip"], 
                                   api_port=conf["dnstap-receiver"]["api-port"],

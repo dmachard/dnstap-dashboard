@@ -2,7 +2,7 @@
 
 import setuptools
 
-with open("./dnstop/__init__.py", "r") as fh:
+with open("./dnstap_dashboard/__init__.py", "r") as fh:
     for line in fh.read().splitlines():
         if line.startswith('__version__'):
             PKG_VERSION = line.split('"')[1]
@@ -10,18 +10,18 @@ with open("./dnstop/__init__.py", "r") as fh:
 with open("README.md", "r") as fh:
     LONG_DESCRIPTION = fh.read()
     
-KEYWORDS = ('dnstop dashboard dns metrics')
+KEYWORDS = ('dnstap dashboard dns metrics')
 
 setuptools.setup(
-    name="dnstop",
+    name="dnstap_dashboard",
     version=PKG_VERSION,
     author="Denis MACHARD",
     author_email="d.machard@gmail.com",
-    description="dnstop - real-time metrics for dns server",
+    description="dnstap dashboard - real-time metrics for dns server",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
-    url="https://github.com/dmachard/dnstop",
-    packages=['dnstop'],
+    url="https://github.com/dmachard/dnstap-dashboard",
+    packages=['dnstap_dashboard'],
     include_package_data=True,
     platforms='any',
     keywords=KEYWORDS,
@@ -31,7 +31,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
         "Topic :: Software Development :: Libraries",
     ],
-    entry_points={'console_scripts': ['dnstop = dnstop.dashboard:start']},
+    entry_points={'console_scripts': ['dnstap_dashboard = dnstap_dashboard.dashboard:start']},
     install_requires=[
         "pyyaml",
         "requests"
