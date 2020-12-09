@@ -264,24 +264,24 @@ class DataFetcher:
         
         # fetching top metrics
         top = self.conf["top-items"]
-        endpoint = "/top?n=%s" % top
+        endpoint = "/tables?n=%s" % top
         if self.cur_stream is not None: endpoint += "&stream=%s" % self.cur_stream
         response = self.make_http(endpoint=endpoint)
         
         top_data = []
-        for item in response:
+        for item in response["tables"]:
             if item == "streams": continue
             for topitem in self.conf["categories"]:
                  if topitem == item:
                     for flag in self.conf["categories"][topitem]:
                         top_item_data = {"description": flag["description"], 
-                                         "rows": response[item].get(flag["tag"], []) }
+                                         "rows": response["tables"][item].get(flag["tag"], []) }
                         top_data.append( top_item_data )
                 
         data["top"] = top_data
         
         # fetching counters
-        endpoint = "/count?"
+        endpoint = "/counters?"
         endpoint += "more=query/udp,query/tcp,response/udp,response/tcp"
         endpoint += ",query/inet,query/inet6,response/inet,response/inet6"
         if self.cur_stream is not None: endpoint += "&stream=%s" % self.cur_stream

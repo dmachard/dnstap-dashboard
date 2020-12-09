@@ -7,7 +7,7 @@
 
 ## Overview
 
-**dnstap_dashboard** can display metrics of your dns server in real-time.
+**dnstap_dashboard** can display metrics of your dns server in real-time, a top-like command.
 
 > If you want to use-it, your server must support the ``dnstap`` feature and also deploy the following [dnstap receiver](https://github.com/dmachard/dnstap-receiver)
                        
